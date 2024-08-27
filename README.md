@@ -2,7 +2,7 @@
 
 **OLÁ!!!** Sou o Arthur, e este é o meu projeto do **DesafioONE Turma7**! 🎉
 
-Criei esta aplicação web para criptografar e descriptografar mensagens de texto, usando nada mais, nada menos que **HTML**, **CSS**, e **JavaScript**. Segui o design proposto pelo desafio, e posso dizer que foi uma experiência incrível!
+Criei esta aplicação web para criptografar e descriptografar mensagens de texto, usando nada mais, nada menos que **HTML**, **CSS**, e **JavaScript**. Segui o design proposto pelo desafio, e posso dizer que foi uma experiência incrível! Este projeto está aberto para sugestões e melhorias! Se você tiver ideias ou encontrar algo que pode ser aprimorado, sinta-se à vontade para contribuir, e entrar em contato comigo!!
 
 <img src="Imgs/FtREADME.jpeg.png" alt="Imagem do projeto no navegador Desktop">
 
@@ -77,7 +77,7 @@ As regras de substituição são as seguintes:
 
 ## Autor
 
-Desenvolvido por **Arthur Vinícius**.
+Desenvolvido por **Arthur Vinícius Albuquerque Dos Santos**.
 
 - [GitHub](https://github.com/Albuquerque29)
 - [LinkedIn](https://www.linkedin.com/in/albuquerque29)
