@@ -4,7 +4,7 @@ const btn_Descrip = document.querySelector(".btn_Descrip");
 const mensagem_Final = document.querySelector(".mensagem_Final");
 const mensagem_Info = document.getElementById("mensagem_Info");
 const btn_Copiar = document.getElementById("btn_Copiar");
-
+const boneco = document.getElementById("boneco");
 
 const erroMensagem = "Por favor, use apenas letras minúsculas e sem acentuação.";
 
@@ -16,35 +16,34 @@ let replace = [
     ["u", "ufat"],
 ];
 
-const remplace = (novovalor) => {
-    mensagem_Final.innerHTML = novovalor;
+let troca = (novovalor) => {
+    mensagem_Info.innerHTML = novovalor;
+    mensagem_Info.style.fontSize = "22px";
     textAreaJs.value = "";
     boneco.style.display = "none";
-    mensagem_Info.style.display = "none";
+    mensagem_Final.style.display = "none";
     btn_Copiar.style.display = "block";
-}
+};
 
-const validarTexto = (texto) => {
+let validarTexto = (texto) => {
     const regex = /[A-ZÀ-ÿ]/;
     if (regex.test(texto)) {
         alert(erroMensagem);
         return false;
     }
     return true;
-}
+};
 
 btn_Crip.addEventListener("click", () => {
     const texto = textAreaJs.value;
     if (validarTexto(texto)) {
         function encriptar(novotexto) {
             for (let i = 0; i < replace.length; i++) {
-                if (novotexto.includes(replace[i][0])) {
-                    novotexto = novotexto.replaceAll(replace[i][0], replace[i][1]);
-                }
+                novotexto = novotexto.replaceAll(replace[i][0], replace[i][1]);
             }
             return novotexto;
         }
-        remplace(encriptar(texto.toLowerCase()));
+        troca(encriptar(texto.toLowerCase()));
     }
 });
 
@@ -53,46 +52,46 @@ btn_Descrip.addEventListener("click", () => {
     if (validarTexto(texto)) {
         function desencriptar(novotexto) {
             for (let i = 0; i < replace.length; i++) {
-                if (novotexto.includes(replace[i][1])) {
-                    novotexto = novotexto.replaceAll(replace[i][1], replace[i][0]);
-                }
+                novotexto = novotexto.replaceAll(replace[i][1], replace[i][0]);
             }
             return novotexto;
         }
-        remplace(desencriptar(texto.toLowerCase()));
+        troca(desencriptar(texto.toLowerCase()));
     }
 });
 
 function setupBtn_Copiar() {
     function CopiarTexto() {
-        const mensagem = document.querySelector('.mensagem_Final');
-        if (mensagem) {
-            navigator.clipboard.writeText(mensagem.innerText)
+        const textoParaCopiar = mensagem_Info.innerText;
+        if (textoParaCopiar && textoParaCopiar !== "Digite um texto que você deseja criptografar ou descriptografar") {
+            navigator.clipboard.writeText(textoParaCopiar)
                 .then(() => {
-                    alert('Texto Copiado');
+                    alert('Texto copiado com sucesso!');
                     textAreaJs.value = "";
-                    mensagem_Final.innerHTML = "Nenhuma mensagem encontrada";
-                    boneco.style.display = "block"; 
-                    mensagem_Info.style.display = "block"; 
+                    mensagem_Final.style.display = "block";
+                    mensagem_Info.innerHTML = "Digite um texto que você deseja criptografar ou descriptografar";
+                    mensagem_Info.style.fontSize = "16px";
+                    boneco.style.display = "block";
                     btn_Copiar.style.display = "none";
                 })
                 .catch(err => console.error('Erro ao copiar o texto:', err));
+        } else {
+            alert('Nenhuma mensagem para copiar.');
         }
     }
-    const btn_Copiar = document.getElementById('btn_Copiar');
+
     if (btn_Copiar) {
         btn_Copiar.addEventListener('click', CopiarTexto);
     } else {
         console.error('Botão #btn_Copiar não encontrado.');
     }
 }
+
 document.addEventListener('DOMContentLoaded', setupBtn_Copiar);
 
 document.addEventListener("DOMContentLoaded", function() {
     const pgLeft = document.querySelector(".pg_left");
-
     function ajustarAltura() {
-        // Ajusta a altura mínima para garantir que o conteúdo se ajuste
         pgLeft.style.minHeight = pgLeft.scrollHeight + "px";
     }
     ajustarAltura();

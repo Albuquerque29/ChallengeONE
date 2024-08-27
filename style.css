@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(198, 227, 247);
+    background-color:  #F3F5FC ;
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
@@ -69,6 +69,7 @@ textarea {
     width: 100%; 
     height: 400px;
     background-color: transparent;
+    outline: none;
     box-shadow: none;
     border: none;
     resize: none;
@@ -76,7 +77,7 @@ textarea {
 }
 
 textarea::placeholder {
-    color: #262a2e;
+    color: #0A3871;
 }
 
 .conteiner_Obs {
@@ -103,21 +104,24 @@ textarea::placeholder {
 
 .btn_Crip, .btn_Descrip {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     height: 50px;
-    border-radius: 12px;
-    border: none;
+    border-radius: 12px
 }
 
 .btn_Crip {
     background-color: #0A3871;
     color: white;
     width: 200px; 
+    border: none;
 }
 
 .btn_Descrip {
-    background-color: #384047;
-    color: #ffffff;
+    background-color: #F3F5FC;
+    border-style: ridge;
+    border-width: 1.5px;
+    border-color: #0A3871;
+    color: #0A3871;
     width: 200px; 
 }
 
@@ -140,14 +144,17 @@ textarea::placeholder {
 
 .btn_Copiar {
     margin-top: 20px;
-    background-color: #D8DFE8;
+    background-color: #F3F5FC;
     color: #0A3871;
     width: 250px;
     font-size: 16px;
-    font-weight: 500;
     height: 50px;
     border-radius: 12px;
     border-color: #0A3871;
+    font-weight: 400;
+	border-radius: 12px;
+	border-style: ridge;
+    border-width: 1.5px;
 }
 
 footer{
@@ -162,7 +169,6 @@ footer{
 .img_Footer{
     width: 45px;
 }
-
 
 @media screen and (max-width: 840px) {
     header {
@@ -183,21 +189,21 @@ footer{
         font-size: 26px;
         height: 300px;
         width: 100%;
-        min-height: 200px; /* Altura mínima */
-        max-height: 400px; /* Altura máxima */
+        min-height: 200px; 
+        max-height: 400px; 
     }
 
     .btns_pgRight {
-        flex-direction: column; /* Empilha os botões verticalmente */
-        gap: 100px; /* Adiciona espaço vertical entre os botões */
+        flex-direction: column;
+        gap: 100px; 
     }
 
     .btn_Crip, .btn_Descrip {
         font-size: 14px;
         height: 45px;
-        width: 90%; /* Ajusta a largura dos botões para 90% da largura do container */
-        min-width: 150px; /* Largura mínima */
-        max-width: 200px; /* Largura máxima */
+        width: 90%; 
+        min-width: 150px;
+        max-width: 200px; 
     }
 }
 
